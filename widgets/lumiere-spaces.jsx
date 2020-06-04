@@ -1,4 +1,4 @@
-export const command = 'yabai -m query --spaces'
+export const command = '/usr/local/bin/yabai -m query --spaces'
 
 function safeJson(raw) {
   let result = '';

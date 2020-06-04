@@ -1,13 +1,12 @@
 :root {
   --bar-height: 24px;
-  --foreground: rgba(255, 255, 255, .95);
-  --background: black;
+  --foreground: rgba(255, 255, 255, 0.95);
+  --background: rgba(0, 0, 0, 0.5);
 }
-
 
 .bar {
   position: fixed;
-  top: 0;
+  top: 5px;
   left: 0;
   right: 0;
   width: 100%;
@@ -17,7 +16,7 @@
   color: var(--foreground);
   font-family: "SF Mono";
   display: grid;
-  grid-template-areas: 'spaces music title stats clock';
+  grid-template-areas: "spaces music title stats clock";
   grid-template-columns: auto auto 1fr auto auto;
   grid-column-gap: 20px;
   align-items: center;
@@ -27,21 +26,23 @@
   padding-right: 30px;
   padding-left: 10px;
   box-sizing: border-box;
-
-  -webkit-backdrop-filter: blur(3px);
 }
 
 .bar.bg {
-  background-color: var(--background);
   z-index: -1;
 }
 
-
 .spaces {
   grid-area: spaces;
+  background-color: var(--background);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 3px 6px;
 }
 
 .music {
+  background-color: var(--background);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 3px 6px;
   grid-area: music;
   max-width: 50ch;
   display: inline-block;
@@ -55,11 +56,17 @@
 }
 
 .clock {
+  background-color: var(--background);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 3px 6px;
   font-weight: 400;
   grid-area: clock;
 }
 
 .stats {
+  background-color: var(--background);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 3px 6px;
   font-weight: 400;
   grid-area: stats;
   display: flex;
@@ -78,6 +85,9 @@
 }
 
 .title-content {
+  /* background-color: var(--background); */
+  /* -webkit-backdrop-filter: blur(5px); */
+  /* padding: 3px 6px; */
   position: fixed;
   height: var(--bar-height);
   line-height: var(--bar-height);
@@ -101,3 +111,4 @@
     max-width: 40ch;
   }
 }
+
