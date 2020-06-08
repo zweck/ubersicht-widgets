@@ -35,13 +35,13 @@
 .spaces {
   grid-area: spaces;
   background-color: var(--background);
-  -webkit-backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px) saturate(120%);
   padding: 3px 6px;
 }
 
 .music {
   background-color: var(--background);
-  -webkit-backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px) saturate(120%);
   padding: 3px 6px;
   grid-area: music;
   max-width: 50ch;
@@ -57,7 +57,7 @@
 
 .clock {
   background-color: var(--background);
-  -webkit-backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px) saturate(120%);
   padding: 3px 6px;
   font-weight: 400;
   grid-area: clock;
@@ -65,7 +65,7 @@
 
 .stats {
   background-color: var(--background);
-  -webkit-backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px) saturate(120%);
   padding: 3px 6px;
   font-weight: 400;
   grid-area: stats;
@@ -80,21 +80,27 @@
 .title {
   font-weight: 400;
   grid-area: title;
-  text-align: center;
+  /* text-align: center; */
   position: relative;
 }
 
 .title-content {
-  /* background-color: var(--background); */
-  /* -webkit-backdrop-filter: blur(5px); */
-  /* padding: 3px 6px; */
-  position: fixed;
-  height: var(--bar-height);
-  line-height: var(--bar-height);
-  top: 0;
-  width: 60vw;
-  left: 50%;
-  transform: translateX(-50%);
+  background-color: var(--background);
+  -webkit-backdrop-filter: blur(5px) saturate(120%);
+  padding: 3px 6px;
+
+  /* position: fixed; */
+  /* height: var(--bar-height); */
+  /* line-height: var(--bar-height); */
+  /* top: 0; */
+  /* width: 60vw; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+
+  text-overflow: clip;
+  text-overflow: ellipsis;
+
+  max-width: 25rem;
 
   display: inline-block;
   overflow: hidden;
@@ -103,10 +109,6 @@
 }
 
 @media (max-width: 1920px) {
-  .title-content {
-    width: 35vw;
-  }
-
   .music {
     max-width: 40ch;
   }

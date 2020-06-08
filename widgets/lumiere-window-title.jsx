@@ -1,4 +1,4 @@
-export const command = 'cat lumiere/.cache/window.json'
+export const command = "/usr/local/bin/yabai -m query --windows | /usr/local/bin/jq -c '.[] | select(.focused | contains(1))'"
 
 function safeJson(raw) {
   let result = '';

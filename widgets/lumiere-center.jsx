@@ -49,7 +49,7 @@ export const render = ({ spaces, windowTitle, clock, cpu, mem, music, battery })
   return <div>
     <div className="bar">
       <div className="spaces">{spaces}</div>
-      <div className="music">{String(music).trim().length > 0 && `♫ ${music}`}</div>
+      {/* <div className="music">{String(music).trim().length > 0 && `♫ ${music}`}</div> */}
       <div className="title">
         <div className="title-content">
           {windowTitle}
